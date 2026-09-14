@@ -952,9 +952,9 @@ button:active {
 ========================= */
 
 .navegacion {
+  
     position: absolute;
-
-    bottom: 10px;
+    bottom: 20px;
 
     left: 10px;
     right: 10px;
