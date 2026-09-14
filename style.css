@@ -1,0 +1,1030 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f8dce8;
+    overflow: hidden;
+}
+
+
+/* =========================
+   APP
+========================= */
+
+.app {
+    width: 100%;
+    max-width: 430px;
+    height: 100vh;
+
+    margin: auto;
+
+    position: relative;
+    overflow: hidden;
+
+    background-image: url("fondo-pusheen.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.app::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    pointer-events: none;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    position: absolute;
+
+    top: 12px;
+    left: 0;
+
+    width: 100%;
+
+    text-align: center;
+
+    z-index: 5;
+}
+
+header h1 {
+    font-size: 25px;
+    color: #6e4a5c;
+    margin: 3px 0;
+}
+
+.decoracion {
+    color: #b8799a;
+    font-size: 14px;
+}
+
+
+/* =========================
+   PANTALLAS
+========================= */
+
+.pantalla {
+    position: absolute;
+
+    inset: 0;
+
+    padding: 105px 18px 95px;
+
+    display: none;
+
+    overflow-y: auto;
+}
+
+.pantalla.activa {
+    display: block;
+}
+
+
+/* =========================
+   INICIO
+========================= */
+
+.inicio-contenido {
+    width: 100%;
+
+    min-height: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    padding-bottom: 5px;
+}
+
+
+/* Tarjeta de Pusheen */
+
+.inicio-pusheen {
+    width: 92%;
+
+    min-height: 155px;
+
+    background: rgba(255, 255, 255, 0.84);
+
+    border-radius: 28px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 10px;
+
+    box-shadow: 0 5px 20px rgba(100, 60, 80, 0.12);
+}
+
+.inicio-titulo {
+    color: #765464;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    margin-bottom: 3px;
+}
+
+.pusheen-inicio {
+    width: 125px;
+
+    height: 125px;
+
+    object-fit: contain;
+
+    border-radius: 20px;
+}
+
+
+/* Frase */
+
+.frase {
+    width: 92%;
+
+    min-height: 72px;
+
+    padding: 18px 20px;
+
+    background: rgba(255, 255, 255, 0.88);
+
+    border-radius: 25px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    color: #6e4a5c;
+
+    font-size: 19px;
+
+    font-weight: bold;
+
+    box-shadow: 0 5px 20px rgba(100, 60, 80, 0.12);
+}
+
+
+/* Contadores */
+
+.inicio-datos {
+    width: 92%;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 10px;
+}
+
+.dato-inicio {
+    min-height: 65px;
+
+    background: rgba(255, 255, 255, 0.86);
+
+    border-radius: 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    box-shadow: 0 5px 15px rgba(100, 60, 80, 0.10);
+
+    color: #704d5d;
+}
+
+.dato-icono {
+    font-size: 25px;
+}
+
+.dato-inicio div {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 2px;
+}
+
+.dato-inicio strong {
+    font-size: 18px;
+
+    color: #6e4a5c;
+}
+
+.dato-inicio small {
+    font-size: 11px;
+
+    color: #987080;
+}
+
+
+/* Próxima fecha */
+
+.proxima-fecha {
+    width: 92%;
+
+    min-height: 65px;
+
+    background: rgba(255, 255, 255, 0.88);
+
+    border-radius: 20px;
+
+    padding: 11px 15px;
+
+    text-align: center;
+
+    box-shadow: 0 5px 15px rgba(100, 60, 80, 0.10);
+}
+
+.proxima-fecha-titulo {
+    color: #704d5d;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    margin-bottom: 5px;
+}
+
+.proxima-fecha-texto {
+    color: #987080;
+
+    font-size: 12px;
+}
+
+.decoracion-inicio {
+    color: #b8799a;
+
+    font-size: 15px;
+
+    margin-top: -2px;
+}
+
+
+/* =========================
+   CAJAS
+========================= */
+
+.seccion-box {
+    width: 100%;
+
+    background: rgba(255, 255, 255, 0.88);
+
+    border-radius: 25px;
+
+    padding: 20px;
+
+    box-shadow: 0 5px 20px rgba(100, 60, 80, 0.12);
+
+    margin-bottom: 20px;
+}
+
+.seccion-box h2 {
+    text-align: center;
+
+    color: #704d5d;
+
+    margin-bottom: 18px;
+}
+
+
+/* =========================
+   INPUTS
+========================= */
+
+input,
+textarea {
+    width: 100%;
+
+    border: none;
+
+    outline: none;
+
+    background: #fff7fa;
+
+    border: 2px solid #f0d2df;
+
+    border-radius: 15px;
+
+    padding: 12px;
+
+    margin-bottom: 10px;
+
+    font-size: 14px;
+
+    color: #654957;
+}
+
+textarea {
+    resize: none;
+
+    min-height: 90px;
+}
+
+
+/* =========================
+   BOTONES
+========================= */
+
+button {
+    border: none;
+
+    background: #d998b6;
+
+    color: white;
+
+    border-radius: 15px;
+
+    padding: 11px 15px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+}
+
+button:active {
+    transform: scale(0.97);
+}
+
+.seccion-box > button {
+    width: 100%;
+
+    margin-bottom: 15px;
+}
+
+
+/* =========================
+   GALERÍA
+========================= */
+
+.selector-imagen {
+    display: block;
+
+    width: 100%;
+
+    padding: 13px;
+
+    margin-bottom: 10px;
+
+    text-align: center;
+
+    border-radius: 15px;
+
+    background: #f7dce8;
+
+    color: #765464;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.selector-imagen input {
+    display: none;
+}
+
+
+/* =========================
+   NOTAS
+========================= */
+
+.nota {
+    background: #fff7fa;
+
+    border-radius: 15px;
+
+    padding: 13px;
+
+    margin-bottom: 10px;
+
+    color: #654957;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 10px;
+
+    align-items: center;
+}
+
+.nota button {
+    background: #d17c9f;
+
+    padding: 7px 10px;
+
+    font-size: 12px;
+}
+
+
+/* =========================
+   FECHAS
+========================= */
+
+.fecha {
+    background: #fff7fa;
+
+    border-radius: 15px;
+
+    padding: 13px;
+
+    margin-bottom: 10px;
+
+    color: #654957;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+.fecha-info {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+}
+
+.fecha button {
+    background: #d17c9f;
+
+    padding: 7px 10px;
+
+    font-size: 12px;
+}
+
+
+/* =========================
+   TAREAS
+========================= */
+
+.tarea {
+    background: #fff7fa;
+
+    border-radius: 15px;
+
+    padding: 12px;
+
+    margin-bottom: 10px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+.tarea span {
+    flex: 1;
+
+    color: #654957;
+}
+
+.tarea.completada span {
+    text-decoration: line-through;
+
+    opacity: 0.55;
+}
+
+.tarea button {
+    background: #d17c9f;
+
+    padding: 7px 10px;
+
+    font-size: 12px;
+}
+
+
+/* =========================
+   RECUERDOS
+========================= */
+
+.recuerdo {
+    background: #fff7fa;
+
+    border-radius: 18px;
+
+    padding: 12px;
+
+    margin-bottom: 15px;
+}
+
+.recuerdo img {
+    width: 100%;
+
+    max-height: 260px;
+
+    object-fit: cover;
+
+    border-radius: 14px;
+
+    margin-bottom: 10px;
+}
+
+.recuerdo h3 {
+    color: #704d5d;
+
+    margin-bottom: 5px;
+}
+
+.recuerdo p {
+    color: #765464;
+
+    font-size: 14px;
+
+    margin-bottom: 10px;
+}
+
+.recuerdo button {
+    background: #d17c9f;
+
+    padding: 7px 10px;
+
+    font-size: 12px;
+}
+
+
+/* =========================
+   MENÚ DE JUEGOS
+========================= */
+
+.menu-juegos {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+.menu-juegos button {
+    width: 100%;
+
+    min-height: 78px;
+
+    background: rgba(255, 247, 250, 0.95);
+
+    color: #704d5d;
+
+    border: 2px solid #f0d2df;
+
+    display: grid;
+
+    grid-template-columns: 55px 1fr;
+
+    grid-template-rows: 1fr 1fr;
+
+    text-align: left;
+
+    align-items: center;
+}
+
+.menu-juegos button span {
+    grid-row: 1 / 3;
+
+    font-size: 35px;
+
+    text-align: center;
+}
+
+.menu-juegos button strong {
+    font-size: 16px;
+}
+
+.menu-juegos button small {
+    font-size: 11px;
+
+    color: #987080;
+}
+
+
+/* =========================
+   JUEGOS
+========================= */
+
+.juego-contenedor {
+    display: none;
+
+    background: rgba(255, 255, 255, 0.92);
+
+    border-radius: 25px;
+
+    padding: 18px;
+
+    margin-bottom: 20px;
+
+    text-align: center;
+}
+
+.juego-contenedor.activo {
+    display: block;
+}
+
+.volver-juegos {
+    display: block;
+
+    background: transparent;
+
+    color: #765464;
+
+    padding: 5px 0;
+
+    margin-bottom: 8px;
+}
+
+.juego-contenedor h2 {
+    color: #704d5d;
+
+    margin-bottom: 10px;
+}
+
+.instruccion-juego {
+    color: #987080;
+
+    font-size: 13px;
+
+    margin-bottom: 12px;
+}
+
+
+/* =========================
+   DATOS DE JUEGO
+========================= */
+
+.datos-juego {
+    display: flex;
+
+    justify-content: space-around;
+
+    margin: 10px 0 12px;
+
+    color: #704d5d;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   ATRAPA CORAZONES
+========================= */
+
+.area-juego {
+    position: relative;
+
+    width: 100%;
+
+    height: 330px;
+
+    background: #fff1f6;
+
+    border: 2px solid #f0d2df;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+}
+
+.mensaje-juego {
+    position: absolute;
+
+    width: 100%;
+
+    top: 45%;
+
+    color: #987080;
+
+    font-size: 14px;
+}
+
+.corazon-juego {
+    position: absolute;
+
+    border: none;
+
+    background: transparent;
+
+    padding: 0;
+
+    font-size: 35px;
+
+    line-height: 1;
+
+    animation: aparecerCorazon 0.15s ease;
+}
+
+@keyframes aparecerCorazon {
+
+    from {
+        transform: scale(0);
+    }
+
+    to {
+        transform: scale(1);
+    }
+
+}
+
+.boton-iniciar {
+    width: 100%;
+
+    margin-top: 12px;
+
+    background: #d998b6;
+}
+
+
+/* =========================
+   MEMORIA
+========================= */
+
+.tablero-memoria {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 8px;
+
+    margin-top: 10px;
+}
+
+.carta-memoria {
+    aspect-ratio: 1 / 1;
+
+    padding: 0;
+
+    border-radius: 13px;
+
+    background: #e8b8cc;
+
+    font-size: 25px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+}
+
+.carta-memoria.descubierta,
+.carta-memoria.encontrada {
+    background: #fff1f6;
+
+    color: #704d5d;
+
+    border: 2px solid #efcad9;
+}
+
+.mensaje-memoria {
+    min-height: 20px;
+
+    margin-top: 10px;
+
+    color: #765464;
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   ¿DÓNDE ESTÁ PUSHEEN?
+========================= */
+
+.tablero-pusheen {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 10px;
+
+    margin-top: 15px;
+}
+
+.casilla-pusheen {
+    aspect-ratio: 1 / 1;
+
+    padding: 5px;
+
+    border-radius: 18px;
+
+    background: #e8b8cc;
+
+    border: 2px solid #efcad9;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-size: 20px;
+}
+
+.casilla-pusheen:active {
+    transform: scale(0.95);
+}
+
+.casilla-pusheen.fallo {
+    background: #eeeeee;
+
+    opacity: 0.7;
+}
+
+.casilla-pusheen.encontrado {
+    background: #fff1f6;
+
+    border: 3px solid #d998b6;
+}
+
+.imagen-pusheen-juego {
+    width: 82%;
+
+    height: 82%;
+
+    object-fit: contain;
+
+    border-radius: 12px;
+
+    pointer-events: none;
+}
+
+#mensajePusheen {
+    min-height: 30px;
+
+    margin-top: 10px;
+
+    color: #765464;
+
+    font-size: 14px;
+
+    font-weight: bold;
+}
+
+
+/* =========================
+   ATRAPA A PUSHEEN
+========================= */
+
+.area-atrapa-pusheen {
+    position: relative;
+
+    width: 100%;
+
+    height: 330px;
+
+    background: #fff1f6;
+
+    border: 2px solid #f0d2df;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+}
+
+.pusheen-atrapable {
+    position: absolute;
+
+    width: 75px;
+
+    height: 75px;
+
+    object-fit: contain;
+
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    user-select: none;
+
+    -webkit-user-drag: none;
+
+    animation: aparecerPusheen 0.15s ease;
+}
+
+@keyframes aparecerPusheen {
+
+    from {
+        transform: scale(0);
+    }
+
+    to {
+        transform: scale(1);
+    }
+
+}
+
+
+/* =========================
+   NAVEGACIÓN
+========================= */
+
+.navegacion {
+    position: absolute;
+
+    bottom: 10px;
+
+    left: 10px;
+    right: 10px;
+
+    height: 68px;
+
+    background: rgba(255, 255, 255, 0.92);
+
+    border-radius: 22px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 4px;
+
+    padding: 7px;
+
+    z-index: 10;
+
+    overflow-x: auto;
+
+    scrollbar-width: none;
+}
+
+.navegacion::-webkit-scrollbar {
+    display: none;
+}
+
+.navegacion button {
+    min-width: 67px;
+
+    height: 55px;
+
+    background: transparent;
+
+    color: #765464;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 3px;
+
+    font-size: 19px;
+}
+
+.navegacion button span {
+    font-size: 10px;
+
+    font-weight: normal;
+}
+
+.navegacion button:hover {
+    background: #f6dce7;
+}
+
+
+/* =========================
+   COMPUTADORA
+========================= */
+
+@media (min-width: 600px) {
+
+    .app {
+        box-shadow: 0 0 35px rgba(70, 40, 60, 0.25);
+    }
+
+}

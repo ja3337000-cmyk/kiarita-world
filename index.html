@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiarita World</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <header>
+        <div class="decoracion">✦ ♡ ✿ ♡ ✦</div>
+        <h1>Kiarita World</h1>
+        <div class="decoracion">♡ ˚₊‧꒰ა ☆ ໒꒱ ‧₊˚ ♡</div>
+    </header>
+
+
+    <!-- INICIO -->
+    <section id="inicio" class="pantalla activa">
+
+        <div class="inicio-contenido">
+
+            <div class="inicio-pusheen">
+
+                <div class="inicio-titulo">
+                    🐾 Un pequeño rinconcito
+                </div>
+
+                <img
+                    src="pusheen.jpg"
+                    alt="Pusheen"
+                    class="pusheen-inicio"
+                >
+
+            </div>
+
+
+            <div class="frase" id="frase"></div>
+
+
+            <div class="inicio-datos">
+
+                <div class="dato-inicio">
+
+                    <span class="dato-icono">📝</span>
+
+                    <div>
+                        <strong id="contadorNotas">0</strong>
+                        <small>Notas</small>
+                    </div>
+
+                </div>
+
+
+                <div class="dato-inicio">
+
+                    <span class="dato-icono">📸</span>
+
+                    <div>
+                        <strong id="contadorRecuerdos">0</strong>
+                        <small>Recuerdos</small>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="proxima-fecha">
+
+                <div class="proxima-fecha-titulo">
+                    📅 Próxima fecha
+                </div>
+
+                <div
+                    id="proximaFecha"
+                    class="proxima-fecha-texto"
+                >
+                    No hay fechas guardadas todavía 🌷
+                </div>
+
+            </div>
+
+
+            <div class="decoracion-inicio">
+                ♡ ✦ 🌸 ✦ ♡
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- NOTAS -->
+    <section id="notas" class="pantalla">
+        <div class="seccion-box">
+
+            <h2>📝 Notas</h2>
+
+            <input
+                type="text"
+                id="notaTexto"
+                placeholder="Escribe una nota..."
+            >
+
+            <button onclick="guardarNota()">
+                Guardar nota
+            </button>
+
+            <div id="listaNotas"></div>
+
+        </div>
+    </section>
+
+
+    <!-- FECHAS -->
+    <section id="fechas" class="pantalla">
+        <div class="seccion-box">
+
+            <h2>📅 Fechas</h2>
+
+            <input
+                type="text"
+                id="fechaTitulo"
+                placeholder="¿Qué fecha es?"
+            >
+
+            <input
+                type="date"
+                id="fecha"
+            >
+
+            <button onclick="guardarFecha()">
+                Guardar fecha
+            </button>
+
+            <div id="listaFechas"></div>
+
+        </div>
+    </section>
+
+
+    <!-- TAREAS -->
+    <section id="tareas" class="pantalla">
+        <div class="seccion-box">
+
+            <h2>✅ Tareas</h2>
+
+            <input
+                type="text"
+                id="tareaTexto"
+                placeholder="Nueva tarea..."
+            >
+
+            <button onclick="guardarTarea()">
+                Agregar tarea
+            </button>
+
+            <div id="listaTareas"></div>
+
+        </div>
+    </section>
+
+
+    <!-- RECUERDOS -->
+    <section id="recuerdos" class="pantalla">
+        <div class="seccion-box">
+
+            <h2>📸 Recuerdos</h2>
+
+            <input
+                type="text"
+                id="recuerdoTitulo"
+                placeholder="Título del recuerdo"
+            >
+
+            <label class="selector-imagen">
+
+                📷 Elegir foto de la galería
+
+                <input
+                    type="file"
+                    id="recuerdoImagen"
+                    accept="image/*"
+                >
+
+            </label>
+
+            <textarea
+                id="recuerdoDescripcion"
+                placeholder="Escribe algo sobre este recuerdo..."
+            ></textarea>
+
+            <button onclick="guardarRecuerdo()">
+                Guardar recuerdo
+            </button>
+
+            <div id="listaRecuerdos"></div>
+
+        </div>
+    </section>
+
+
+    <!-- JUEGOS -->
+    <section id="juegos" class="pantalla">
+
+        <div class="seccion-box">
+
+            <h2>🎮 Mini juegos</h2>
+
+            <div class="menu-juegos">
+
+                <button onclick="abrirJuego('corazones')">
+                    <span>💗</span>
+                    <strong>Atrapa corazones</strong>
+                    <small>¡Atrapa todos los que puedas!</small>
+                </button>
+
+                <button onclick="abrirJuego('memoria')">
+                    <span>🃏</span>
+                    <strong>Memoria</strong>
+                    <small>Encuentra todas las parejas</small>
+                </button>
+
+                <button onclick="abrirJuego('pusheen')">
+                    <span>🐱</span>
+                    <strong>¿Dónde está Pusheen?</strong>
+                    <small>¡Encuéntralo antes de que se esconda!</small>
+                </button>
+
+                <button onclick="abrirJuego('atrapaPusheen')">
+                    <span>🐾</span>
+                    <strong>Atrapa a Pusheen</strong>
+                    <small>¡Tócalo antes de que desaparezca!</small>
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- ATRAPA CORAZONES -->
+
+        <div id="juegoCorazones" class="juego-contenedor">
+
+            <button class="volver-juegos" onclick="volverJuegos()">
+                ← Volver
+            </button>
+
+            <h2>💗 Atrapa corazones</h2>
+
+            <div class="datos-juego">
+                <span>Puntos: <b id="puntosCorazones">0</b></span>
+                <span>Tiempo: <b id="tiempoCorazones">20</b></span>
+            </div>
+
+            <div id="areaCorazones" class="area-juego">
+
+                <div class="mensaje-juego">
+                    Pulsa INICIAR para comenzar 💗
+                </div>
+
+            </div>
+
+            <button
+                id="botonCorazones"
+                class="boton-iniciar"
+                onclick="iniciarCorazones()"
+            >
+                💗 INICIAR
+            </button>
+
+        </div>
+
+
+        <!-- MEMORIA -->
+
+        <div id="juegoMemoria" class="juego-contenedor">
+
+            <button class="volver-juegos" onclick="volverJuegos()">
+                ← Volver
+            </button>
+
+            <h2>🃏 Memoria</h2>
+
+            <p class="instruccion-juego">
+                Encuentra todas las parejas 💗
+            </p>
+
+            <div id="tableroMemoria" class="tablero-memoria"></div>
+
+            <p id="mensajeMemoria" class="mensaje-memoria"></p>
+
+            <button
+                class="boton-iniciar"
+                onclick="iniciarMemoria()"
+            >
+                🔄 Reiniciar
+            </button>
+
+        </div>
+
+
+        <!-- ¿DÓNDE ESTÁ PUSHEEN? -->
+
+        <div id="juegoPusheen" class="juego-contenedor">
+
+            <button class="volver-juegos" onclick="volverJuegos()">
+                ← Volver
+            </button>
+
+            <h2>🐱 ¿Dónde está Pusheen?</h2>
+
+            <p class="instruccion-juego">
+                ¡Encuentra a Pusheen! 🐾
+            </p>
+
+            <div class="datos-juego">
+                <span>Nivel: <b id="nivelPusheen">1</b></span>
+                <span>Puntos: <b id="puntosPusheen">0</b></span>
+            </div>
+
+            <p id="mensajePusheen" class="mensaje-juego">
+                Pulsa INICIAR para comenzar 🐱
+            </p>
+
+            <div id="tableroPusheen" class="tablero-pusheen"></div>
+
+            <button
+                class="boton-iniciar"
+                onclick="iniciarPusheen()"
+            >
+                🐾 INICIAR
+            </button>
+
+        </div>
+
+
+        <!-- ATRAPA A PUSHEEN -->
+
+        <div id="juegoAtrapaPusheen" class="juego-contenedor">
+
+            <button class="volver-juegos" onclick="volverJuegos()">
+                ← Volver
+            </button>
+
+            <h2>🐾 Atrapa a Pusheen</h2>
+
+            <p class="instruccion-juego">
+                ¡Tócalo antes de que desaparezca! 🐱
+            </p>
+
+            <div class="datos-juego">
+                <span>Puntos: <b id="puntosAtrapaPusheen">0</b></span>
+                <span>Tiempo: <b id="tiempoAtrapaPusheen">20</b></span>
+            </div>
+
+            <div
+                id="areaAtrapaPusheen"
+                class="area-atrapa-pusheen"
+            >
+
+                <div class="mensaje-juego">
+                    Pulsa INICIAR para comenzar 🐾
+                </div>
+
+            </div>
+
+            <button
+                id="botonAtrapaPusheen"
+                class="boton-iniciar"
+                onclick="iniciarAtrapaPusheen()"
+            >
+                🐾 INICIAR
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- NAVEGACIÓN -->
+
+    <nav class="navegacion">
+
+        <button onclick="mostrarPantalla('inicio')">
+            🏠
+            <span>Inicio</span>
+        </button>
+
+        <button onclick="mostrarPantalla('notas')">
+            📝
+            <span>Notas</span>
+        </button>
+
+        <button onclick="mostrarPantalla('fechas')">
+            📅
+            <span>Fechas</span>
+        </button>
+
+        <button onclick="mostrarPantalla('tareas')">
+            ✅
+            <span>Tareas</span>
+        </button>
+
+        <button onclick="mostrarPantalla('recuerdos')">
+            📸
+            <span>Recuerdos</span>
+        </button>
+
+        <button onclick="mostrarPantalla('juegos')">
+            🎮
+            <span>Juegos</span>
+        </button>
+
+    </nav>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
