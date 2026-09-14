@@ -671,7 +671,7 @@ function eliminarRecuerdo(index) {
 
 function abrirJuego(juego) {
 
-    document.querySelector(".seccion-box").style.display = "none";
+    document.querySelector("#juegos .seccion-box").style.display = "none";
 
     document
         .getElementById("juegoCorazones")
@@ -756,7 +756,7 @@ function volverJuegos() {
         .classList.remove("activo");
 
 
-    document.querySelector(".seccion-box").style.display =
+    document.querySelector("#juegos .seccion-box").style.display =
         "block";
 }
 
